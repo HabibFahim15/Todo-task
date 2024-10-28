@@ -1,9 +1,10 @@
 "use client"
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const page = () => {
-
+  const router = useRouter()
   const handleSignUp = async(e) => {
     e.preventDefault()
     const newUser={
@@ -19,7 +20,7 @@ const page = () => {
     });
     if(resp.status === 200){
       e.target.reset()
-      
+      router.push('/')
     }
   }
 
